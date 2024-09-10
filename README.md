@@ -46,3 +46,55 @@ Contributions are welcome! Please fork the repository and submit pull requests w
 
 ## License
 This project is open source and available under the [MIT License](LICENSE).
+
+#PTBR
+
+# Página de Destino BusDriver
+
+## Visão Geral
+BusDriver é uma página de destino moderna e responsiva para um aplicativo de transporte público. Ela apresenta recursos-chave e soluções para melhorar a experiência do usuário com o transporte público.
+
+## Características
+- Design responsivo para dispositivos móveis e desktop
+- Menu de navegação interativo
+- Seção hero envolvente com botões de chamada para ação
+- Seção de soluções animada que aparece ao rolar
+- Esquema de cores personalizável com acentos verdes
+
+## Tecnologias Utilizadas
+- React
+- TypeScript
+- Vite
+- CSS3 com propriedades personalizadas
+- React Icons
+
+## Estrutura do Projeto
+- `src/pages/Home.tsx`: Componente principal contendo a estrutura da página de destino
+- `src/styles/`: Arquivos CSS para estilização de diferentes seções
+  - `index.css`: Estilos globais e variáveis CSS
+  - `header.css`: Estilos para o cabeçalho de navegação
+  - `hero.css`: Estilos para a seção hero
+  - `solutions.css`: Estilos para a seção de soluções
+  - `utility.css`: Classes utilitárias para layout e espaçamento
+  - `buttons.css`: Estilos para componentes de botões
+
+## Configuração e Instalação
+1. Clone o repositório
+2. Execute `npm install` para instalar as dependências
+3. Use `npm run dev` para iniciar o servidor de desenvolvimento
+4. Abra `http://localhost:3000` no seu navegador
+
+## Personalização
+- Modifique o esquema de cores em `src/styles/index.css`
+- Ajuste o conteúdo em `src/pages/Home.tsx`
+- Adicione ou remova itens de solução conforme necessário
+
+## Implantação
+Construa o projeto usando `npm run build` e implante o conteúdo da pasta `dist` na sua plataforma de hospedagem preferida.
+
+## Contribuindo
+Contribuições são bem-vindas! Por favor, faça um fork do repositório e envie pull requests com quaisquer melhorias.
+
+## Licença
+Este projeto é de código aberto e está disponível sob a [Licença MIT](LICENSE).
+
