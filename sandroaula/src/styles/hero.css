@@ -66,11 +66,10 @@
 #hero > img {
   position: absolute;
   right: 0;
-  height: 60%;
-  padding-left: 30%;
-  filter: hue-rotate(280deg); /* This will shift the hue towards green */
+  height: 50%; /* Reduced from 60% */
+  padding-left: 20%; /* Reduced from 30% */
+  filter: hue-rotate(280deg);
 }
-
 #hero > span img {
   filter: hue-rotate(280deg); /* This will also shift the hue of rectangleTwo towards green */
 }
@@ -88,7 +87,7 @@
       top: 0;
       height: 82%;
       padding-left: 55%;
-      filter: hue-rotate(280deg); /* Ensure the filter is applied in the media query as well */
+      filter: hue-rotate(280deg);
     }
   }
 }
