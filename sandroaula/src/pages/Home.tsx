@@ -38,7 +38,14 @@ export default function Home() {
     };
   }, [showMobileMenu]);
   
-
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+    setShowMobileMenu(false);
+  };
+  
   return (
     <>
       <header className="container py-sm ">
@@ -51,8 +58,9 @@ export default function Home() {
                 <a href="#">Home</a>
               </li>
               <li>
-                <a href="#solution">Soluções</a>
-              </li>
+  <a onClick={() => scrollToSection('solution')}>Soluções</a>
+</li>
+
               <li>
                 <a href="#testimonials">Depoimentos</a>
               </li>
@@ -83,8 +91,9 @@ export default function Home() {
                       <a href="#">Home</a>
                     </li>
                     <li>
-                      <a href="#solution">Soluções</a>
-                    </li>
+  <a onClick={() => scrollToSection('solution')}>Soluções</a>
+</li>
+
                     <li>
                       <a href="#testimonials">Depoimentos</a>
                     </li>
