@@ -18,16 +18,26 @@ export default function Home() {
   const [showSolutions, setShowSolutions] = useState(false);
 
   useEffect(() => {
+    if (showMobileMenu) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+  
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       if (scrollPosition > 300) {
         setShowSolutions(true);
       }
     };
-
+  
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.body.classList.remove('menu-open');
+    };
+  }, [showMobileMenu]);
+  
 
   return (
     <>

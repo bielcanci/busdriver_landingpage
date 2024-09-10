@@ -67,4 +67,8 @@
     grid-auto-columns: 1fr;
   }
 }
+body.menu-open {
+  overflow: hidden;
+}
+
 
