@@ -176,7 +176,7 @@ export default function Home() {
             </div>
           </div>
           <div className="solutions-cta">
-            <Button text="Experimente Agora" />
+            <Button text="Aproveite Agora" />
           </div>
         </div>
       </section>
