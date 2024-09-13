@@ -96,4 +96,14 @@
   .pricing-item .btn-primary:hover {
     background-color: #ffffffc5; 
   }
+ 
+  
+  .pricing-item.featured {
+    animation: glow 5s ease-in-out infinite;
+  }
+  
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px rgba(35, 240, 120, 0.3), 0 0 10px rgba(35, 240, 120, 0.2), 0 0 15px rgba(35, 240, 120, 0.1); }
+    50% { box-shadow: 0 0 20px rgba(35, 240, 120, 0.8), 0 0 30px rgba(35, 240, 120, 0.6), 0 0 40px rgba(35, 240, 120, 0.4); }
+  }
   
