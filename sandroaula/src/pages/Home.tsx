@@ -44,7 +44,6 @@ export default function Home() {
       <Testimonials show={showSections.testimonials} />
       <Pricing show={showSections.pricing} />
       <section id="contact">
-      <center><h2>Entre em Contato</h2></center>
         <ContactForm />
       </section>
     </>

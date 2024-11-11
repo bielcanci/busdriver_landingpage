@@ -25,8 +25,29 @@ const testimonialData = [
   {
     quote: "O melhor app de transporte que já usei. As notificações em tempo real são muito úteis.",
     author: "Clara Mendes"
+  },
+  {
+    quote: "Consigo planejar melhor meu dia com as previsões precisas de chegada.",
+    author: "Rafael Souza"
+  },
+  {
+    quote: "O sistema de pagamento digital facilitou muito minha vida. Adeus filas!",
+    author: "Beatriz Lima"
+  },
+  {
+    quote: "As rotas alternativas salvaram meu dia várias vezes. App indispensável!",
+    author: "Lucas Ferreira"
+  },
+  {
+    quote: "Excelente para quem usa transporte público diariamente. Muito confiável!",
+    author: "Mariana Costa"
+  },
+  {
+    quote: "O suporte ao cliente é fantástico. Resolveram minha dúvida rapidamente.",
+    author: "Fernando Alves"
   }
 ];
+
 
 export default function Testimonials({ show }: TestimonialsProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
