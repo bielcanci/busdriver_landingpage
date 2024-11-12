@@ -12,6 +12,8 @@ import "../styles/solutions.css";
 import "../styles/testimonials.css";
 import "../styles/pricing.css";
 import "../styles/ContactForm.css";
+import  "../styles/footer.css";
+import Footer from "../components/Footer.tsx";
 
 export default function Home() {
   const [showSections, setShowSections] = useState({
@@ -46,6 +48,7 @@ export default function Home() {
       <section id="contact">
         <ContactForm />
       </section>
+      <Footer show={true} />
     </>
   );
 }

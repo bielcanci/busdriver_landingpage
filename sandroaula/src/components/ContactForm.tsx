@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { sendEmail } from "../services/emailService";
-import { FaEnvelope, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaPhone, FaTwitter } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 
 export const ContactForm = () => {
   const [email, setEmail] = useState("");
@@ -45,39 +45,36 @@ export const ContactForm = () => {
     <div className="contact-section">
       <div className="contact-info">
         <h2>Entre em contato</h2>
-        <p>Adoraríamos ouvir sua opinião. Veja como você pode entrar em contato conosco...</p>
-        
+        <p>
+          Adoraríamos ouvir sua opinião. Veja como você pode entrar em contato
+          conosco...
+        </p>
+
         <div className="contact-details">
           <div className="contact-item">
             <FaMapMarkerAlt />
             <span>Rua 123, Parque Verde, Cidade 12345</span>
           </div>
-          
+
           <div className="contact-item">
             <FaPhone />
             <span>+55 (45) 9 9999-9999</span>
           </div>
-          
+
           <div className="contact-item">
             <FaEnvelope />
             <span>contact@busdriver.com</span>
           </div>
-        </div>
-
-        <div className="social-links">
-          <a href="#"><FaLinkedin /></a>
-          <a href="#"><FaTwitter /></a>
-          <a href="#"><FaInstagram /></a>
         </div>
       </div>
 
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">
           <label htmlFor="email">
-          Digite seu e-mail para receber mais informações:
+            Digite seu e-mail para receber mais informações:
           </label>
           <input
-            type="email"  
+            type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -96,7 +93,9 @@ export const ContactForm = () => {
         )}
 
         {status === "error" && (
-          <p className="error-message">Falha ao enviar e-mail. Por favor, tente novamente.</p>
+          <p className="error-message">
+            Falha ao enviar e-mail. Por favor, tente novamente.
+          </p>
         )}
       </form>
     </div>
