@@ -5,16 +5,19 @@ import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 export const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
 
     const welcomeMessage = `
-    Bem-vindo ao BusDriver!
 
-    Mensagem recebida: "${message}"
+    Mensagem do usuário: "${message}"
+
+    Bem-vindo ao BusDriver!
 
     Obrigado pelo seu interesse em nossas soluções de transporte. Estamos entusiasmados por ter você a bordo.
 
@@ -34,7 +37,7 @@ export const ContactForm = () => {
       await sendEmail({
         toMail: email,
         content: welcomeMessage,
-        userMessage: message
+        userMessage: message,
       });
       setStatus("success");
       setEmail("");
@@ -49,7 +52,8 @@ export const ContactForm = () => {
       <div className="contact-info">
         <h2>Entre em contato</h2>
         <p>
-          Adoraríamos ouvir sua opinião. Entre em contato conosco através dos canais abaixo:
+          Adoraríamos ouvir sua opinião. Entre em contato conosco através dos
+          canais abaixo:
         </p>
 
         <div className="contact-details">
@@ -68,10 +72,8 @@ export const ContactForm = () => {
             <span>contact@busdriver.com</span>
           </div>
         </div>
-
-        
       </div>
-      
+
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">
           <label htmlFor="email">Digite seu e-mail:</label>
@@ -85,12 +87,11 @@ export const ContactForm = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="message">Sua mensagem:</label>
+          <label htmlFor="message">Sua mensagem (opcional):</label>
           <textarea
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            required
             rows={4}
           />
         </div>
