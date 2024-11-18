@@ -4,16 +4,17 @@ import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 
 export const ContactForm = () => {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
 
     const welcomeMessage = `
-   Bem-vindo ao BusDriver!
+    Bem-vindo ao BusDriver!
+
+    Mensagem recebida: "${message}"
 
     Obrigado pelo seu interesse em nossas soluções de transporte. Estamos entusiasmados por ter você a bordo.
 
@@ -33,9 +34,11 @@ export const ContactForm = () => {
       await sendEmail({
         toMail: email,
         content: welcomeMessage,
+        userMessage: message
       });
       setStatus("success");
       setEmail("");
+      setMessage("");
     } catch (error) {
       setStatus("error");
     }
@@ -46,8 +49,7 @@ export const ContactForm = () => {
       <div className="contact-info">
         <h2>Entre em contato</h2>
         <p>
-          Adoraríamos ouvir sua opinião. Veja como você pode entrar em contato
-          conosco...
+          Adoraríamos ouvir sua opinião. Entre em contato conosco através dos canais abaixo:
         </p>
 
         <div className="contact-details">
@@ -66,13 +68,13 @@ export const ContactForm = () => {
             <span>contact@busdriver.com</span>
           </div>
         </div>
-      </div>
 
+        
+      </div>
+      
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">
-          <label htmlFor="email">
-            Digite seu e-mail para receber mais informações:
-          </label>
+          <label htmlFor="email">Digite seu e-mail:</label>
           <input
             type="email"
             id="email"
@@ -82,19 +84,30 @@ export const ContactForm = () => {
           />
         </div>
 
+        <div className="form-group">
+          <label htmlFor="message">Sua mensagem:</label>
+          <textarea
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+            rows={4}
+          />
+        </div>
+
         <button type="submit" disabled={status === "loading"}>
-          {status === "loading" ? "Enviando..." : "Obtenha informações"}
+          {status === "loading" ? "Enviando..." : "Enviar mensagem"}
         </button>
 
         {status === "success" && (
           <p className="success-message">
-            Verifique seu e-mail para mais informações!
+            Mensagem enviada com sucesso! Verifique seu e-mail.
           </p>
         )}
 
         {status === "error" && (
           <p className="error-message">
-            Falha ao enviar e-mail. Por favor, tente novamente.
+            Falha ao enviar mensagem. Por favor, tente novamente.
           </p>
         )}
       </form>
